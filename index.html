@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Robot Proof Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; }
+    .result { margin-top: 12px; font-weight: bold; color: #0a74da; }
+  </style>
+</head>
+<body>
+  <label>
+    <input id="notRobot" type="checkbox" />
+    your not a robot
+  </label>
+
+  <div id="proof" class="result" aria-live="polite" hidden>proof</div>
+
+  <script>
+    const cb = document.getElementById('notRobot');
+    const proof = document.getElementById('proof');
+
+    cb.addEventListener('change', () => {
+      // show "proof" when checked, hide when unchecked
+      proof.hidden = !cb.checked;
+    });
+  </script>
+</body>
+</html>
